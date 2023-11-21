@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Prettier 사용하기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**[👉🏻 Prettier 공식문서 👈🏻](https://prettier.io/docs/en/)**
 
-## Available Scripts
+## 0️⃣ Overview
 
-In the project directory, you can run:
+- Prettier는 설치형 소프트웨어
+- 아래의 명령어로 프로젝트 내에 Prettier를 설치
+  - `npm install -D prettier`
+  - 또는 `yarn add -D prettier`
+- 프로젝트 내에 설치한 `prettier`를 실행함으로써 코드를 포맷팅
+  - `package,json` 내 `scripts`에 실행 커맨드 작성 후 실행
+  - 또는 터미널에서 `npx prettier` 명령어를 바로 입력 후 실행
+- 프로젝트의 root에 `.prettierrc.js`와 같은 설정 파일을 생성하여 사용
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 1️⃣ Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+프로젝트 내에서 아래의 명령어를 실행하여 **`prettier`** 패키지를 `devDependency`로 `node_modules`에 설치
 
-### `npm test`
+- `npm install -D prettier`
+- 또는 `yarn add -D prettier`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 2️⃣ Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+프로젝트 내에 설치한 `prettier`를 아래와 같은 방법으로 실행함으로써 코드를 포맷팅
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### [옵션 1]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. `package.json` 내 `scripts`에 다음과 같이 추가
 
-### `npm run eject`
+   ```javascript
+   "format": "prettier . --write"
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. 터미널에 아래의 명령어를 입력하여 `format` 커맨드를 실행
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `npm run format`
+- 또는 `yarn format`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### [옵션 2]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. 터미널에 `npx prettier . --write`를 입력 후 실행
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 3️⃣ Configuration
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. 아래의 형태 중 하나를 선택하여 프로젝트 루트에 파일 추가
 
-### Code Splitting
+- A "prettier" key in your package.json file. (파일 추가 X)
+- A .prettierrc file written in JSON or YAML.
+- A .prettierrc.json, .prettierrc.yml, .prettierrc.yaml, or .prettierrc.json5 file.
+- A .prettierrc.js, or prettier.config.js file that exports an object using export default or module.exports (depends on the type value in your package.json).
+- A .prettierrc.mjs, or prettier.config.mjs file that exports an object using export default.
+- A .prettierrc.cjs, or prettier.config.cjs file that exports an object using module.exports.
+- A .prettierrc.toml file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**아직 작성 중**
 
-### Analyzing the Bundle Size
+<!--
+## Workspace(작업 공간) Settings
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+}
+``` -->
